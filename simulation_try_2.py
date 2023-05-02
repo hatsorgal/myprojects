@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Gal Hatsor
 
 This is a temporary script file.
 """
@@ -48,17 +48,21 @@ for ii in range(0,len(results)):
     results_mean[ii] = np.mean(count)       
 #%% Some graphs, need to ask Enrique what
 radiation_length = np.zeros(1000);
-for i in range(0,len(radiation_length)):
-    radiation_length[i] = x_X_0 * i;
+radiation_length[0]=x_X_0
+for i in range(1,len(radiation_length)):
+    radiation_length[i] = radiation_length[i-1]  + uniform(1e-3,1) ;
     
 plt.figure()
 plt.plot(radiation_length ,results_mean,'.', label = 'scatter to radiation length')
-plt.xlabel("$Radiation Length [m]$")
+plt.xlabel("$Radiation \  Length [m]$")
 plt.ylabel("Scatter")
 plt.legend()
 plt.grid()
 
-        
-    
+plt.figure()       
+plt.hist(results_mean, bins= 100)  
+plt.xlim(-2e-6, 2e-6)
+plt.xlabel("Scatter")
+plt.ylabel("Count")
     
     
