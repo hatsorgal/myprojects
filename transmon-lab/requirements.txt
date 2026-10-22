@@ -1,0 +1,9 @@
+# Direct dependencies. Install requirements.lock to reproduce the tested environment.
+altair==6.3.0
+numpy==2.3.5
+pandas==2.2.3
+scipy==1.17.0
+streamlit==1.66.0
+pytest==9.1.1
+gdstk==0.9.62
+ezdxf==1.4.3
